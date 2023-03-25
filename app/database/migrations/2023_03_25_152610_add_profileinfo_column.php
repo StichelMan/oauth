@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('locale')->nullable();
             $table->integer('verified_email')->nullable();
             $table->string('logged_in_with')->nullable();
+            $table->string('fav_color')->nullable();
         });
     }
 

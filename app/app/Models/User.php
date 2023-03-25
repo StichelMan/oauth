@@ -37,7 +37,8 @@ class User extends Authenticatable
         'family_name',
         'locale',
         'verified_email',
-        'logged_in_with'
+        'logged_in_with',
+        'fav_color'
     ];
 
     /**

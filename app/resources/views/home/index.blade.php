@@ -5,6 +5,8 @@
         @auth
             <h1>Logged in!</h1>
             <p class="lead">You are logged in with {{auth()->user()->email}} via {{auth()->user()->logged_in_with}}</p>
+            <h5>Your data from this website:</h5>
+            <p style="color: {{auth()->user()->fav_color}}"><b>Favorite color:</b> {{auth()->user()->fav_color}}<br>
             <h5>Your {{auth()->user()->logged_in_with}} data:</h5>
             <p><b>Full Name:</b> {{auth()->user()->name}}<br>
                 @if (auth()->user()->username)

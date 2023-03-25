@@ -45,7 +45,11 @@ class GoogleLoginController extends Controller
 
             Auth::login($newUser);
 
-            return redirect()->intended('/');
+            if ($finduser){
+                return redirect()->intended('/');
+            }else{
+                return redirect()->intended('/color');
+            }
 
 
         } catch (Exception $e) {

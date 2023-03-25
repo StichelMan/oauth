@@ -21,8 +21,8 @@ class FacebookLoginController extends Controller
     {
         try {
 
+
             $user = Socialite::driver('facebook')->user();
-            Log::info(print_r($user, true));
             $finduser = User::where('facebook_id', $user->id)->first();
 
 
@@ -38,8 +38,12 @@ class FacebookLoginController extends Controller
             ]);
 
             Auth::login($newUser);
+            if ($finduser){
+                return redirect()->intended('/');
+            }else{
+                return redirect()->intended('/color');
+            }
 
-            return redirect()->intended('/');
 
 
         } catch (Exception $e) {
